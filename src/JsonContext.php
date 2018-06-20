@@ -33,9 +33,9 @@ class JsonContext implements Context
      */
     private $apiContext;
 
-    public function __construct(JsonInspector $jsonInspector, $jsonSchemaBaseUrl = null)
+    public function __construct($jsonSchemaBaseUrl = '')
     {
-        $this->jsonInspector = $jsonInspector;
+        $this->jsonInspector = new JsonInspector();
         $this->jsonSchemaBaseUrl = rtrim($jsonSchemaBaseUrl, '/');
     }
 

@@ -16,10 +16,10 @@ class JsonInspector
      */
     private $jsonStorage;
 
-    public function __construct(JsonStorage $jsonStorage, JsonParser $jsonParser)
+    public function __construct()
     {
-        $this->jsonParser = $jsonParser;
-        $this->jsonStorage = $jsonStorage;
+        $this->jsonParser = new JsonParser();
+        $this->jsonStorage = new JsonStorage();
     }
 
     /**
