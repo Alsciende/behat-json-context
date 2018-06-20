@@ -29,7 +29,7 @@ class JsonContext implements Context
     private $jsonSchemaBaseUrl;
 
     /**
-     * @var object|null
+     * @var \ArrayAccess|null
      */
     private $apiContext;
 
@@ -66,7 +66,7 @@ class JsonContext implements Context
      */
     public function iLoadTheResponseAsJson()
     {
-        $this->jsonInspector->writeJson((string) $this->apiContext->getResponse()->getContent());
+        $this->jsonInspector->writeJson($this->apiContext['response']['content']);
     }
 
     /**
